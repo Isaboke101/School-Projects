@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple CRUD</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Simple CRUD App</h2>
+  <form method="POST" action="create.php">
+    <label>Name: <input type="text" name="name" required /></label>
+    <button type="submit">Add</button>
+  </form>
+  <hr />
+  <?php include 'read.php'; ?>
+</body>
+</html>

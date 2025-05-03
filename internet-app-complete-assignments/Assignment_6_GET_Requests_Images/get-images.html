@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GET Request with Images</title>
+  <style>
+    img { max-width: 200px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h2>GET Request - Display Images</h2>
+  <div id="imageContainer"></div>
+
+  <script>
+    // Simulating GET request by fetching images from a placeholder API
+    fetch('https://jsonplaceholder.typicode.com/photos?_limit=5')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('imageContainer');
+        data.forEach(item => {
+          const img = document.createElement('img');
+          img.src = item.thumbnailUrl;
+          img.alt = item.title;
+          container.appendChild(img);
+        });
+      })
+      .catch(err => console.error("Failed to load images", err));
+  </script>
+</body>
+</html>
